@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <%= `Hello ${user.userName}` %>
+    </h1>
+
+    <form action="/user/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+
+   
+        <% if (shortid) { %>
+            <p> The short url is <%= shortid %></p>
+        <% } %>
+
+
+    <form method="post" action="/url/generate-short-id">
+        <label for="url">Enter URL</label>
+        <input type="text" required name="url" placeholder="www.google.com">
+        <button type="submit">Generate Shortid</button>
+    </form>
+
+    <table border="black">
+        <tr>
+            <th>shortid</th>
+            <th>url</th>
+            <th>visit count</th>
+        </tr>
+        <% for( let index = 0; index < userUrls.length; index++ ) { %>
+            <tr>
+                <td> <%=  `${userUrls[index].shortUrl}`%></td>
+                <td> <%=  `${userUrls[index].redirectUrl}`%></td>
+                <td> <%=  `${userUrls[index].visHistory.length}`%></td>
+            </tr>
+        <% } %>
+    </table>
+
+
+    
+</body>
+</html>

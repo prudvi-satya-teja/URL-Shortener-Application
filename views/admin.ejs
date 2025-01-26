@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/scripts/">
+</head>
+<body>
+    <h1>
+        <%= "Hello Admin" %>
+    </h1>
+
+    <% if (shortid) { %>
+        <p> Generated Short URL ID: <strong> <%= shortid %></strong></p>
+    <% } %>
+    <form method="post" action="/url/generate-short-id"> 
+        <label for="url"> <%= "Url Shortener" %></label>
+        <input type="text" name="url" id="url" placeholder="www.google.com">
+
+        <button type="submit"> Submit</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Shortid</th>
+            <th>Original url</th>
+            <th>visit Count</th>
+            <th>User</th>
+        </tr>
+        <% for( let i = 0; i < allUser.length; i++ ) { %>
+              <tr>
+                 <td> <%=  `${allUser[i].shortUrl}`%></td>
+                <td> <%=  `${allUser[i].redirectUrl}`%></td>
+                <td> <%=  `${allUser[i].visHistory.length}`%></td>
+                <td> <%= `${allUser[i].userDetails ? allUser[i].userDetails.userName : 'Unknown'} ` %> </td>
+            </tr> 
+        <% } %>
+    </table>
+
+    
+</body>
+</html>

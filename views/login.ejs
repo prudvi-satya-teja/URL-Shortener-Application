@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <script src="/scripts/login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            
+            <h1>Url Shortener</h1>
+            <form method="post" action="/user/login">
+              
+                <input type="text" id="email" name="email" placeholder="Email"><br><br>
+                <input type="text" id="password" name="password" placeholder="Password"><br><br>
+                <button type="submit" id="login">Log in</button> <br>
+            </form>
+            
+            <button type="submit" id="signup" onclick="window.location.href='http://localhost:8001/signup'">Sign up</button>
+        </div>
+    </div>
+</body>
+</html>
