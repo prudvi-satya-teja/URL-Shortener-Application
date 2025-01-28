@@ -2,7 +2,7 @@
 // FOR JWT AUTHENTICATION
 const jwt = require("jsonwebtoken");
 const secret = "Prudvi$123@5";
-const { AUTH} = require("../models/user");
+const {AUTH} = require("../models/user");
 
 
 function setUser( user) {
